@@ -5,5 +5,11 @@ st.title('Article Recommendation System')
 st.info('This app recommends articles based on user search')
 
 with st.expander('Data'):
-    df = pd.read_csv('./Sample.csv')
-    df.head()
+    st.write('**Raw Data**')
+    df = pd.read_csv('https://raw.githubusercontent.com/GokulPrakashK98/DataScienceProject/refs/heads/test-branch/Sample.csv?token=GHSAT0AAAAAAC2HKVXIPRP4XZE77M3SLGEMZ2MLIRQ')
+    df = df.head()
+    df
+    
+# Just add it after st.sidebar:
+# Just add it after st.sidebar:
+a = st.sidebar.radio('Choose:',[1,2])
