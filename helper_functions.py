@@ -1,5 +1,4 @@
 from requests.exceptions import RequestException
-from tqdm import tqdm
 import pandas as pd
 import requests
 import numpy
@@ -115,7 +114,7 @@ def parse_article_info(json_data):
 # Clean and store the article info in a dataframe
 def run_script(ids):
     info = {}
-    for id in tqdm(ids, desc="Processing articles:"):
+    for id in ids:
         data = fetch_meta_data(id)
         if data:
             article_data = parse_article_info(data)
