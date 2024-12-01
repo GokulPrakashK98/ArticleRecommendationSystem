@@ -14,9 +14,9 @@ with st.sidebar:
     retmax = st.selectbox('Select:' [5, 10, 20, 50, 100])
     st.button('Proceed')
     
-if further:    
-    st.write(key_word)
-    st.write(retmax)
+st.write(key_word)
+st.write(retmax)
+st.write(mindate)
 
 # with st.expander('Data'):
 #     st.write('**Raw Data**')
