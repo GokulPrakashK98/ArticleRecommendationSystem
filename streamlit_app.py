@@ -9,3 +9,6 @@ with st.expander('Data'):
     df = pd.read_csv('https://raw.githubusercontent.com/GokulPrakashK98/DataScienceProject/refs/heads/test-branch/Sample.csv?token=GHSAT0AAAAAAC2HKVXIPRP4XZE77M3SLGEMZ2MLIRQ')
     df = df.head()
     df
+    
+# Just add it after st.sidebar:
+a = st.sidebar.radio('Key word:',[1,2])
