@@ -12,11 +12,12 @@ with st.sidebar:
     maxdate = st.date_input('Enter ending date')
     retmode = st.radio('Pick one', ['json', 'xml'])
     retmax = st.selectbox('Select:', [1, 2, 3])
-    st.button('Proceed')
-    
-st.write(key_word)
-st.write(retmax)
-st.write(mindate)
+    status = st.button('Proceed')
+
+if status: 
+    st.write(key_word)
+    st.write(retmax)
+    st.write(mindate)
 
 # with st.expander('Data'):
 #     st.write('**Raw Data**')
