@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from helper_functions import *
+import helper_functions
 
 st.title('Article Recommendation System')
 st.info('This app recommends articles based on user search')
