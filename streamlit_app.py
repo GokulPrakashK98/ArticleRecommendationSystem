@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import helper_functions
+# import helper_functions
 
 st.title('Article Recommendation System')
 st.info('This app recommends articles based on user search')
@@ -18,9 +18,9 @@ if further:
     st.write(key_word)
     st.write(retmax)
 
-with st.expander('Data'):
-    st.write('**Raw Data**')
-    df = pd.read_csv('https://raw.githubusercontent.com/GokulPrakashK98/DataScienceProject/refs/heads/test-branch/Sample.csv?token=GHSAT0AAAAAAC2HKVXIPRP4XZE77M3SLGEMZ2MLIRQ')
-    df = df.head()
-    df
+# with st.expander('Data'):
+#     st.write('**Raw Data**')
+#     df = pd.read_csv('https://raw.githubusercontent.com/GokulPrakashK98/DataScienceProject/refs/heads/test-branch/Sample.csv?token=GHSAT0AAAAAAC2HKVXIPRP4XZE77M3SLGEMZ2MLIRQ')
+#     df = df.head()
+#     df
 
