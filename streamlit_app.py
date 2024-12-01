@@ -11,4 +11,5 @@ with st.expander('Data'):
     df
     
 # Just add it after st.sidebar:
-a = st.sidebar.radio('Key word:',[1,2])
+# Just add it after st.sidebar:
+a = st.sidebar.radio('Choose:',[1,2])
