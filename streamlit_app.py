@@ -1,15 +1,26 @@
 import streamlit as st
 import pandas as pd
+from helper_functions import *
 
 st.title('Article Recommendation System')
 st.info('This app recommends articles based on user search')
+
+with st.sidebar:
+    st.write('Select parameters')
+    key_word = st.text_input('Enter the search keyword')
+    mindate = st.date_input('Enter starting date')
+    maxdate = st.date_input('Enter ending date')
+    retmode = st.radio('Pick one', ['json', 'xml'])
+    retmax = st.selectbox('Select:' [5, 10, 20, 50, 100])
+    further = st.button('Proceed')
+    
+if further:    
+    st.write(key_word)
+    st.write(retmax)
 
 with st.expander('Data'):
     st.write('**Raw Data**')
     df = pd.read_csv('https://raw.githubusercontent.com/GokulPrakashK98/DataScienceProject/refs/heads/test-branch/Sample.csv?token=GHSAT0AAAAAAC2HKVXIPRP4XZE77M3SLGEMZ2MLIRQ')
     df = df.head()
     df
-    
-# Just add it after st.sidebar:
-# Just add it after st.sidebar:
-a = st.sidebar.radio('Choose:',[1,2])
+
