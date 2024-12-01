@@ -12,7 +12,7 @@ with st.sidebar:
     maxdate = st.date_input('Enter ending date')
     retmode = st.radio('Pick one', ['json', 'xml'])
     retmax = st.selectbox('Select:' [5, 10, 20, 50, 100])
-    further = st.button('Proceed')
+    st.button('Proceed')
     
 if further:    
     st.write(key_word)
