@@ -1,6 +1,4 @@
 API_gettingData.ipynb
 test_Neo4j.py
-<<<<<<< HEAD
 secret_keys.py
-=======
->>>>>>> a60104ae2442500315cce952b19b58cb76306ff1
+__pycache__
