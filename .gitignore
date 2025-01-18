@@ -1,4 +1,9 @@
 API_gettingData.ipynb
-test_Neo4j.py
 secret_keys.py
 __pycache__
+SpaCy_Relation_Extraction
+PyTorch
+sentences.txt
+.DS_Store
+.devcontainer
+streamlit_app.py
