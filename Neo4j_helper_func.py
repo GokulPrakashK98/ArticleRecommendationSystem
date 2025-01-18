@@ -49,26 +49,18 @@ def register_user(conn, first, last, username, password):
     conn.query(query, parameters={"username": username, "password": hashed_pw, 'first': first, 'last': last})
     return True
 
-# def fetch_all(conn):
-#     query = "MATCH (n) RETURN n"
-#     result = conn.query(query)
-    
-#     name_lst = []
-#     user_lst = []
-#     passwd_lst = []
-#     for node in result:
-#         passwd_lst.append(node[0]["password"])
-#         user_lst.append(node[0]['username'])
-#         name_lst.append(node[0]['first_name'])
-#     return name_lst, user_lst, passwd_lst
-
-def fetch_all(conn):
-    query = "MATCH (u:User) RETURN u.first_name AS name, u.username AS username, u.password AS password"
+def fetch_users(conn):
+    """Fetch all user information"""
+    query = "MATCH (u:User) RETURN u.first_name AS first_name, u.last_name as last_name, u.username AS user_name"
     results = conn.query(query)
-    names = [record['name'] for record in results]
-    usernames = [record['username'] for record in results]
-    hashed_passwords = [record['password'] for record in results]
-    return names, usernames, hashed_passwords
+    user_info = {}
+    for items in results:
+        first_name = items['first_name']
+        last_name = items['last_name']
+        user_name = items['user_name']
+        user_info[user_name] = {'first_name': first_name, 'last_name': last_name}
+    user_lst = list(user_info.keys())
+    return user_info, user_lst
 
 def verify_user(conn, username, password):
     """Verify user credentials."""
@@ -97,10 +89,11 @@ def add_selected(conn, selected, user, keyword):
     abstract = selected['Abstract']
     query = f"""
     MERGE (a:Article {{pmcid: $article_id}})
-    ON CREATE SET a.title = $title, a.abstract = $abstract
+    ON CREATE SET a.title = $title, a.abstract = $abstract, a.created_at = timestamp()
     WITH a
     MATCH (u:User {{username: $user_name}})
-    MERGE (u)-[:SELECTED {{keyword:$keyword}}]->(a)
+    MERGE (u)-[r:SELECTED {{keyword:$keyword}}]->(a)
+    ON CREATE SET r.created_at = timestamp()
     """
     # Run the query
     try:
@@ -149,6 +142,16 @@ def add_recommended(conn, recommended, selected, user):
         except Exception as e:
             print("Error adding article or relationship:", e)
 
-
-
-
+def fetch_history(conn, user_name):
+    query = f"""
+    MATCH (u:User {{username: $user_name}})-[s:SELECTED]->(a:Article)
+    RETURN s.keyword AS search_term, a.pmcid AS pmcid, a.title AS title
+    ORDER BY s.created_at DESC
+    LIMIT 5
+    """
+    try:
+        result = conn.query(query, parameters={
+            'user_name': user_name})
+        return result
+    except Exception as e:
+        print(f"Error occured while fetching history: {e}")
