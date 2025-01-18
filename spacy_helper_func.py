@@ -1,7 +1,6 @@
 import spacy
 import streamlit as st
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers import pipeline
+import google.generativeai as genai
 from secret_keys import *
 
 nlp = spacy.load("en_core_web_sm")
@@ -38,16 +37,23 @@ def get_sentences(text):
     return sentences
 
 @st.cache_resource
-def load_model(model_name):
-    tokenizer =AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(model_name)
-    return tokenizer, model
+def genai_response(question):
+    generation_config = {
+    "temperature": 1,
+    "top_p": 0.95,
+    "top_k": 40,
+    "max_output_tokens": 150,
+    "response_mime_type": "text/plain",
+    }
 
-@st.cache_resource
-def llm_pipeline(content):
-    messages = [
-        {"role": "user", "content": f"{content}"},
-    ]
-    pipe = pipeline("text-generation", model="ContactDoctor/Bio-Medical-Llama-3-8B", use_auth_token=api_token)
-    res = pipe(messages)
-    return res
+    model = genai.GenerativeModel(model_name='gemini-pro', generation_config=generation_config)
+    prompt = f"""
+    Hey, you're a personal assistant and an expert in Natural Language Processing and Biomedical domain.
+    Explain the following question in about 50 to 100 words:
+    {question}
+    """  
+    try:
+        response = model.generate_content(prompt)
+        return response.text.strip()
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
