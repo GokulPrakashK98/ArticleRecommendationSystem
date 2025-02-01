@@ -155,7 +155,7 @@ else:
             maxdate = str(maxdate.strftime("%d/%m/%Y"))
 
             params = {
-                'keyword': f'{key_word} AND free fulltext', 
+                'keyword': f'{key_word} AND free full text', 
                 'mindate': mindate, 
                 'maxdate': maxdate, 
                 'retmode': retmode, 
