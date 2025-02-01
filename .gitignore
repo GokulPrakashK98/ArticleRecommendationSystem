@@ -7,3 +7,5 @@ sentences.txt
 .DS_Store
 .devcontainer
 streamlit_app.py
+docker-compose.yml
+volumes
