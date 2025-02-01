@@ -6,7 +6,19 @@ import json
 from Bio import Entrez
 
 # Fetch article ids based on keywords
-def fetch_article_id(keyword, mindate, maxdate, db='pmc', retmax=20, retmode='json'):    
+def fetch_article_id(keyword, mindate, maxdate, db='pmc', retmax=20, retmode='json'):
+    """
+    Fetch article IDs from the PubMed Central (PMC) database based on a keyword search.
+    Parameters:
+        keyword (str): The search term for finding relevant articles.
+        mindate (str): The minimum publication date (YYYY/MM/DD format).
+        maxdate (str): The maximum publication date (YYYY/MM/DD format).
+        db (str): The database to search (default is 'pmc').
+        retmax (int): Maximum number of article IDs to return (default is 20).
+        retmode (str): The format of the returned data (default is 'json').
+    Returns:
+        tuple: A tuple containing the raw response data and a list of article IDs.
+    """  
     Entrez.email = "rameshsreelakshmi214@gmail.com"
     Entrez.api_key = "6a7330828c7e43fa66ecd8c1167f36433c08"
     esearch_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
@@ -29,6 +41,13 @@ def fetch_article_id(keyword, mindate, maxdate, db='pmc', retmax=20, retmode='js
 
 # Fetch meta data of the collected articles
 def fetch_meta_data(id):
+    """
+    Fetch metadata of an article using its PMC ID.
+    Parameters:
+        id (str): The PMC ID of the article.
+    Returns:
+        dict or None: The metadata in JSON format, or None if an error occurs.
+    """
     format = 'json'
     encode = 'unicode'
     url = f'https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_{format}/PMC{id}/{encode}'
@@ -48,6 +67,14 @@ def fetch_meta_data(id):
 
 # Parse the article info 
 def parse_article_info(json_data):
+    """
+    Extracts relevant article information from the JSON response.
+    Parameters:
+        json_data (dict): The JSON data containing article details.
+    Returns:
+        dict: A dictionary with extracted article details such as title, abstract, 
+        introduction, methods, results, and discussion.
+    """
     article_info = {}
     intro_lst = []
     results_lst = []
@@ -113,6 +140,13 @@ def parse_article_info(json_data):
 
 # Clean and store the article info in a dataframe
 def run_script(ids):
+    """
+    Fetches and processes metadata for a list of PMC article IDs.
+    Parameters:
+        ids (list): A list of PMC article IDs.
+    Returns:
+        pandas.DataFrame: A DataFrame containing processed article information.
+    """
     info = {}
     for id in ids:
         try: 
