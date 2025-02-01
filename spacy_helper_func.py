@@ -36,7 +36,7 @@ def get_sentences(text):
     sentences = [sent.text for sent in doc.sents]
     return sentences
 
-@st.cache_resource
+@st.cache_resources
 def genai_response(question):
     generation_config = {
     "temperature": 1,
