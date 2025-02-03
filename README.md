@@ -1,1 +1,3 @@
-# Article Recommendation System
+# **Article Recommendation System**
+## Overview:
+This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the **Entrez API** and **BioC API** to retrieve article metadata and abstracts from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly Streamlit interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust Neo4j graph database for efficient authentication and querying. 
