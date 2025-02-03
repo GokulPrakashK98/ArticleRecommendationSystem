@@ -1,6 +1,7 @@
 # **Article Recommendation System**
 ## Overview:
-This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the **Entrez API** and **BioC API** to retrieve article metadata and abstracts from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly Streamlit interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust Neo4j graph database for efficient authentication and querying. 
+This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the **Entrez API** and **BioC API** to retrieve article metadata and abstracts from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly Streamlit interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust Neo4j graph database for efficient authentication and querying.
+## Functionalities
 1. **Data Source and Retrieval**
 The primary data sources are: 
 + *Entrez API*: Fetch metadata (e.g., article titles, abstracts, DOI, publication date) from PubMed and PMC using keyword-based or structured queries. 
@@ -23,7 +24,7 @@ The system uses statistical methods to drive recommendations:
 Interactive visualizations using Matplotlib and Plotly enhance user engagement:
 + *Article Categories*: Bar charts showing the availability of articles based on the search.
 + *Neo4j Graph Visualizations*: Showcase relationships between articles using graph-based tools.
-6. **Tools and Libraries**
+## Tools and Libraries
 APIs:
 + Entrez API: Fetch metadata and abstracts from PubMed.
 + BioC API: Access full-text articles from PMC.
@@ -32,3 +33,8 @@ Databases:
 NLP and Similarity:
 + spaCy/NLTK: Preprocess text data (e.g., abstracts).
 + Scikit-learn: Vectorize abstracts using TF-IDF and compute cosine similarity.
+Web Development:
++ Streamlit: Build an interactive and intuitive user interface.
+Visualization:
++ Matplotlib: Create engaging visualizations for article availability.
+## Group Details
