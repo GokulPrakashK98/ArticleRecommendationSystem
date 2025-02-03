@@ -24,18 +24,13 @@ The system uses statistical methods to drive recommendations:
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
 + *Neo4j Graph Visualizations*: Showcase relationships between article.
 ## Tools and Libraries
+------------------|------------------------|
 APIs              |  Entrez API, BioC API  |
-------------------|------------------------|
 Databases         |  Neo4j                 |
-------------------|------------------------|
 NLP               |  spaCy                 |
-------------------|------------------------|
 Embeddings        |  Transformer           |
-------------------|------------------------|
 Cosine Similarity |  Scikit-learn          |
-------------------|------------------------|
 Web Development   |  Streamlit             |
-------------------|------------------------|
 Visualization     |  Matplotlib            |
 
 ## Group Details
