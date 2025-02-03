@@ -24,9 +24,8 @@ The system uses statistical methods to drive recommendations:
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
 + *Neo4j Graph Visualizations*: Showcase relationships between article.
 ## Tools and Libraries
-1. APIs:
-+ Entrez API: Fetch metadata and abstracts from PubMed & PMC.
-+ BioC API: Access full-text articles from PMC.
+APIs  |  Entrez API: Fetch metadata and abstracts from PubMed & PMC.
+      |   BioC API: Access full-text articles from PMC.
 2. Databases:
 + Neo4j: Store articles metadata, user data and their relationships. 
 3. NLP and Similarity:
