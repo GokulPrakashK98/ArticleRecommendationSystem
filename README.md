@@ -25,16 +25,16 @@ Interactive visualizations using Matplotlib and Plotly enhance user engagement:
 + *Article Categories*: Bar charts showing the availability of articles based on the search.
 + *Neo4j Graph Visualizations*: Showcase relationships between articles using graph-based tools.
 ## Tools and Libraries
-APIs:
+1. APIs:
 + Entrez API: Fetch metadata and abstracts from PubMed.
 + BioC API: Access full-text articles from PMC.
-Databases:
+2. Databases:
 + Neo4j: Store articles, categories, and their relationships. 
-NLP and Similarity:
+3. NLP and Similarity:
 + spaCy/NLTK: Preprocess text data (e.g., abstracts).
 + Scikit-learn: Vectorize abstracts using TF-IDF and compute cosine similarity.
-Web Development:
+4. Web Development:
 + Streamlit: Build an interactive and intuitive user interface.
-Visualization:
+5. Visualization:
 + Matplotlib: Create engaging visualizations for article availability.
 ## Group Details
