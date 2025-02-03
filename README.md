@@ -10,26 +10,25 @@ The primary data sources are:
 The system employs a Neo4j graph database to efficiently store and manage user interactions, article metadata, and relationships. 
 + *Nodes*: Users (with properties like username and password). Articles (storing metadata such as title, abstract). 
 + *Relationships*: Semantic links between similar articles (SIMILAR_TO) based on cosine similarity. 
-+ *Preprocessing*: spaCy for cleaning and tokenizing text data (e.g., abstracts).
-+ *Embeddings*: Compute contextual BERT embeddings of article abstracts for similarity calculations. 
++ *Preprocessing*: [spaCy](https://spacy.io/api/doc/) for cleaning and tokenizing text data (e.g., abstracts).
++ *Embeddings*: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
 3. **Interface**
 The front end will be a sleek, intuitive Streamlit application that allows users to:
 + *Register and Log In*: User credentials stored securely in Neo4j.
 + *Filter and Search*: Keyword-based article search and filtering by publication year.
-+ *Recommendation Dashboard*: Dynamic display of recommended articles based on user preference.
++ *Recommendation Dashboard*: Display of recommended articles based on user selection.
 4. **Statistical Analysis**
 The system uses statistical methods to drive recommendations: 
 + *Cosine Similarity*: Measure similarity between article abstracts using their BERT contextual embeddings.
 5. **Visualizations**
-Interactive visualizations using Matplotlib and Plotly enhance user engagement:
-+ *Article Categories*: Bar charts showing the availability of articles based on the search.
-+ *Neo4j Graph Visualizations*: Showcase relationships between articles using graph-based tools.
++ *Article Availability*: Bar charts showing the number of hits based on the user query.
++ *Neo4j Graph Visualizations*: Showcase relationships between article.
 ## Tools and Libraries
 1. APIs:
-+ Entrez API: Fetch metadata and abstracts from PubMed.
++ Entrez API: Fetch metadata and abstracts from PubMed & PMC.
 + BioC API: Access full-text articles from PMC.
 2. Databases:
-+ Neo4j: Store articles, categories, and their relationships. 
++ Neo4j: Store articles metadata, user data and their relationships. 
 3. NLP and Similarity:
 + spaCy: For NLP tasks: tokenization, named entity recognition, POS tagging and so on.
 + Scikit-learn & transformer: Vectorize abstracts using BERT transformer model and compute cosine similarity.
