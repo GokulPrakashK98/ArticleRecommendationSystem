@@ -5,7 +5,7 @@ import torch
 import numpy as np
 
 def vectorize_text(texts_lst, method='bert'):
-    # Choose one methof
+    # Choose one methods
     if method == 'tfidf':
         vectorizer = TfidfVectorizer(stop_words='english')
         return vectorizer.fit_transform(texts_lst)
