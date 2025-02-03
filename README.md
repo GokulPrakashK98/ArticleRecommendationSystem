@@ -23,6 +23,8 @@ The system uses statistical methods to drive recommendations:
 5. **Visualizations**
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
 + *Neo4j Graph Visualizations*: Showcase relationships between article.
+## Timeline
+![]()
 ## Tools and Libraries
 | Tasks             |  Tools                 |
 |-------------------|------------------------|
