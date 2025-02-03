@@ -25,5 +25,10 @@ Interactive visualizations using Matplotlib and Plotly enhance user engagement:
 + *Neo4j Graph Visualizations*: Showcase relationships between articles using graph-based tools.
 6. **Tools and Libraries**
 APIs:
-++ Entrez API: Fetch metadata and abstracts from PubMed.
-++ BioC API: Access full-text articles from PMC.
++ Entrez API: Fetch metadata and abstracts from PubMed.
++ BioC API: Access full-text articles from PMC.
+Databases:
++ Neo4j: Store articles, categories, and their relationships. 
+NLP and Similarity:
++ spaCy/NLTK: Preprocess text data (e.g., abstracts).
++ Scikit-learn: Vectorize abstracts using TF-IDF and compute cosine similarity.
