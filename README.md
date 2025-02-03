@@ -23,8 +23,6 @@ The system uses statistical methods to drive recommendations:
 5. **Visualizations**
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
 + *Neo4j Graph Visualizations*: Showcase relationships between article.
-## Timeline
-![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.png)
 ## Tools and Libraries
 | Tasks             |  Tools                 |
 |-------------------|------------------------|
@@ -35,7 +33,8 @@ The system uses statistical methods to drive recommendations:
 | Cosine Similarity |  Scikit-learn          |
 | Web Development   |  Streamlit             |
 | Visualization     |  Matplotlib            |
-
+## Timeline
+![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.png)
 ## Group Details
 * Group Name: Core-Code Crew
 * Group Code: G23
