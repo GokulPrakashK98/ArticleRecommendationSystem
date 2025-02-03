@@ -1,6 +1,6 @@
 # **Article Recommendation System**
 ## Overview:
-This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the **Entrez API** and **BioC API** to retrieve article metadata and abstracts from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly Streamlit interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust Neo4j graph database for efficient authentication and querying.
+This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the [Entrez API](https://biopython.org/docs/1.75/api/Bio.Entrez.html) and [BioC API](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PMC/) to retrieve article metadata and abstracts from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly Streamlit interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust Neo4j graph database for efficient authentication and querying.
 ## Functionalities
 1. **Data Source and Retrieval**
 The primary data sources are: 
@@ -31,8 +31,8 @@ Interactive visualizations using Matplotlib and Plotly enhance user engagement:
 2. Databases:
 + Neo4j: Store articles, categories, and their relationships. 
 3. NLP and Similarity:
-+ spaCy/NLTK: Preprocess text data (e.g., abstracts).
-+ Scikit-learn: Vectorize abstracts using TF-IDF and compute cosine similarity.
++ spaCy: For NLP tasks: tokenization, named entity recognition, POS tagging and so on.
++ Scikit-learn & transformer: Vectorize abstracts using BERT transformer model and compute cosine similarity.
 4. Web Development:
 + Streamlit: Build an interactive and intuitive user interface.
 5. Visualization:
