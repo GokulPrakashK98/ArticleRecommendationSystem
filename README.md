@@ -38,3 +38,8 @@ Interactive visualizations using Matplotlib and Plotly enhance user engagement:
 5. Visualization:
 + Matplotlib: Create engaging visualizations for article availability.
 ## Group Details
+* Group Name: Core-Code Crew
+* Group Code: G23
+* Tutor Responsible: Frederik, Hennecke
+* Group team leader: Sreelakshmi, Ramesh
+* Group Members: Kolakkattil, Gokul Prakash & Ramesh, Sreelakshmi  
