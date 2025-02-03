@@ -40,4 +40,5 @@ The system uses statistical methods to drive recommendations:
 * Group Code: G23
 * Tutor Responsible: Frederik, Hennecke
 * Group team leader: Sreelakshmi, Ramesh
-* Group Members: Kolakkattil, Gokul Prakash & Ramesh, Sreelakshmi  
+* Group Members: Kolakkattil, Gokul Prakash & Ramesh, Sreelakshmi
+Gokul managed the NLP tasks and Neo4j database administration, while Sreelakshmi developed the API functions to gather data based on user queries and took care of the entire documentation. Both shared the responsibility for the Streamlit interface.
