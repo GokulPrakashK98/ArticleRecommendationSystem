@@ -24,17 +24,13 @@ The system uses statistical methods to drive recommendations:
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
 + *Neo4j Graph Visualizations*: Showcase relationships between article.
 ## Tools and Libraries
-APIs  |  Entrez API: Fetch metadata and abstracts from PubMed & PMC.
-      |   BioC API: Access full-text articles from PMC.
-2. Databases:
-+ Neo4j: Store articles metadata, user data and their relationships. 
-3. NLP and Similarity:
-+ spaCy: For NLP tasks: tokenization, named entity recognition, POS tagging and so on.
-+ Scikit-learn & transformer: Vectorize abstracts using BERT transformer model and compute cosine similarity.
-4. Web Development:
-+ Streamlit: Build an interactive and intuitive user interface.
-5. Visualization:
-+ Matplotlib: Create engaging visualizations for article availability.
+APIs              |  Entrez API, BioC API  |
+Databases         |  Neo4j                 |
+NLP               |  spaCy                 |
+Embeddings        |  Transformer           |
+Cosine Similarity |  Scikit-learn          |
+Web Development   |  Streamlit             |
+Visualization     |  Matplotlib            |
 ## Group Details
 * Group Name: Core-Code Crew
 * Group Code: G23
