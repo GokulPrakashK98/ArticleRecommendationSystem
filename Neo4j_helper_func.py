@@ -155,3 +155,14 @@ def fetch_history(conn, user_name):
         return result
     except Exception as e:
         print(f"Error occured while fetching history: {e}")
+
+def remove_user(conn, username):
+    query = f"""
+    MATCH (u:User {{username: $user_name}}) DETACH DELETE u
+    """
+    try:
+        result = conn.query(query, parameters={
+            'user_name': username})
+        return result
+    except Exception as e:
+        print(f"Error occured while removing user: {e}")
