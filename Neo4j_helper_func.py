@@ -1,6 +1,8 @@
 from neo4j import GraphDatabase
 import bcrypt
 import streamlit as st
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 class Neo4jConnection:
     def __init__(self, uri, user, pwd):
@@ -75,6 +77,7 @@ def verify_user(conn, username, password):
     return False
 
 def add_selected(conn, selected, user, keyword):
+    """Add user seletced article to database"""
     try:
         conn.query("""
         CREATE CONSTRAINT article_id IF NOT EXISTS
@@ -108,6 +111,8 @@ def add_selected(conn, selected, user, keyword):
         print("Error adding article or relationship:", e)
 
 def add_recommended(conn, recommended, selected, user):
+    """Add recommended articles for the user 
+       seletced article to database"""
     try:
         conn.query("""
         CREATE CONSTRAINT article_id IF NOT EXISTS
@@ -166,3 +171,58 @@ def remove_user(conn, username):
         return result
     except Exception as e:
         print(f"Error occured while removing user: {e}")
+
+def get_statistics(conn):
+    query = """
+    MATCH (u:User)
+    WITH count(u) AS user_count
+
+    MATCH (a:Article) 
+    WITH  user_count, count(a) AS selected_article_count
+
+    MATCH (r:RecomArticle)
+    RETURN user_count, selected_article_count, count(r) AS recom_article_count
+    """
+    try:
+        result = conn.query(query)
+        return result[0]
+    except Exception as e:
+        print(f"Error occured while fetching history: {e}")
+
+
+
+# def plot_statistics(stats):
+#     if not stats:
+#         st.write("No data available for plotting.")
+#         return
+    
+#     labels = ['Users', 'Selected Articles', 'Recommended Articles']
+#     values = stats
+#     fig, ax = plt.subplots(figsize=(8, 5))
+
+#     ax.bar(labels, values, color=['blue', 'green', 'orange'])
+
+#     ax.set_xlabel("Categories")
+#     ax.set_ylabel("Count")
+#     st.pyplot(fig)
+
+
+
+def plot_statistics(stats):
+    if not stats:
+        st.write("No data available for plotting.")
+        return
+    
+    labels = ['Users', 'Selected Articles', 'Recommended Articles']
+    values = stats
+
+    fig = go.Figure(data=[go.Bar(x=labels, y=values, marker_color=['blue', 'green', 'orange'])])
+
+    fig.update_layout(
+        title="Neo4j Database Statistics",
+        xaxis_title="Categories",
+        yaxis_title="Count",
+        bargap=0.2
+    )
+
+    st.plotly_chart(fig)  
