@@ -190,24 +190,6 @@ def get_statistics(conn):
         print(f"Error occured while fetching history: {e}")
 
 
-
-# def plot_statistics(stats):
-#     if not stats:
-#         st.write("No data available for plotting.")
-#         return
-    
-#     labels = ['Users', 'Selected Articles', 'Recommended Articles']
-#     values = stats
-#     fig, ax = plt.subplots(figsize=(8, 5))
-
-#     ax.bar(labels, values, color=['blue', 'green', 'orange'])
-
-#     ax.set_xlabel("Categories")
-#     ax.set_ylabel("Count")
-#     st.pyplot(fig)
-
-
-
 def plot_statistics(stats):
     if not stats:
         st.write("No data available for plotting.")
