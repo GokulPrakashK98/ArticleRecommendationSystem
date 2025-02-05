@@ -89,6 +89,25 @@ if not st.session_state.logged_in:
             else:
                 st.error("Please fill in both fields.")
 
+# Admin previlages               
+elif st.session_state.user == 'admin':
+    set_page_layout("Admin Dashboard", "centered")
+    if st.button('logout'):
+        for key in st.session_state.keys():
+            del st.session_state[key]
+        st.rerun()
+    st.title('Welcome back Admin!!!')
+    with st.expander('Database Statistics'):
+        if st.button('Get statistics'):
+            stats = get_statistics(neo4j_conn)
+            plot_statistics(stats)
+            
+    with st.expander("User management"):
+        user_name = st.text_input("Username")
+        if st.button('Delete user'):
+            remove_user(neo4j_conn, user_name)
+            st.warning(f"User {user_name} removed.")
+
 ########## App #################
 else:
     set_page_layout("Article Recommendation System", "wide")
@@ -142,13 +161,7 @@ else:
                     
 
         # Storing the keyword in Session
-        # if 'keyword' not in st.session_state:
-        #     st.session_state.keyword = None
         st.session_state.keyword = key_word
-
-        # Storing the Articles in Session
-        # if "article_df" not in st.session_state:
-        #     st.session_state.article_df = pd.DataFrame()
 
         if status:
             mindate = str(mindate.strftime("%d/%m/%Y"))
@@ -167,7 +180,6 @@ else:
                 with st.spinner("Fetching data..."):
                     data, article_ids = fetch_article_id(**params)
                     article_df = run_script(article_ids)
-                # data = api_output(**params)
 
                 # Save the DataFrame to session state
                 st.session_state.article_df = article_df
@@ -391,6 +403,4 @@ else:
         history = fetch_history(neo4j_conn, user)
         history = pd.DataFrame(history, columns=['Search term', 'pmcid', 'title'])
         st.dataframe(history)
-
-        
 
