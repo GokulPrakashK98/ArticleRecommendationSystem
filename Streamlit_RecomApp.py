@@ -36,6 +36,7 @@ for key, default in session_defaults.items():
 
 if not st.session_state.logged_in:
     set_page_layout("Login", "centered")
+    st.title("Article Recommendation System")
     tab_register, tab_login = st.tabs(["Register", "Login"])
 
     with tab_register:
