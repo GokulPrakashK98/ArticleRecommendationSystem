@@ -94,36 +94,37 @@ def parse_article_info(json_data):
 
             # Get the section type (eg. 'Introduction')
             section_type = infons.get('section_type', '').lower()
+            passage_type = infons.get('type', '').lower()
 
             # Parsing title & abstracts
             if section_type == 'title':
                 title = passage.get('text', '')
-            elif section_type == 'abstract':
+            elif section_type == 'abstract' and passage_type == 'abstract':
                 abstract = passage.get('text', '')
                 abstract_lst.append(abstract)
 
             # Parsing other sections
-            elif section_type == 'intro':
+            elif section_type == 'intro' and passage_type == 'paragraph':
                 intro = passage.get('text', '')
                 intro_lst.append(intro)
 
-            elif section_type == 'methods':
+            elif section_type == 'methods' and passage_type == 'paragraph':
                 methods = passage.get('text', '')
                 methods_lst.append(methods)
 
-            elif section_type == 'discuss':
+            elif section_type == 'discuss' and passage_type == 'paragraph':
                 discuss = passage.get('text', '')
                 discussion_lst.append(discuss)
 
-            elif section_type == 'results':
+            elif section_type == 'results' and passage_type == 'paragraph':
                 results = passage.get('text', '')
                 results_lst.append(results)
 
     abstract = ' '.join(abstract_lst)
-    introduction = ' '.join(intro_lst[1:])
-    methods = ' '.join(methods_lst[1:])
-    discussion = ' '.join(discussion_lst[1:])
-    results = ' '.join(results_lst[1:])
+    introduction = ' '.join(intro_lst)
+    methods = ' '.join(methods_lst)
+    discussion = ' '.join(discussion_lst)
+    results = ' '.join(results_lst)
 
     if pmcid:
         article_info[pmcid] = {'PMID': pmid,
