@@ -10,8 +10,8 @@ The primary data sources are:
 The system employs a Neo4j graph database to efficiently store and manage user interactions, article metadata, and relationships. 
 + *Nodes*: Users (with properties like username and password). Articles (storing metadata such as title, abstract). 
 + *Relationships*: SELECTED and RECOMMENDED relationships between user and articles. 
-+ *Preprocessing*: [spaCy](https://spacy.io/api/doc/) for NLP tasks.
-+ *Embeddings*: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
+*NLP tasks*: [spaCy](https://spacy.io/api/doc/) for tasks like tokenization, NER, POS tagging and so on.
+*Embeddings*: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
 3. **Interface**
 The front end will be a sleek, intuitive Streamlit application that allows users to:
 + *Register and Log In*: User credentials stored securely in Neo4j.
