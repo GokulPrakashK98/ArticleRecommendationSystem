@@ -9,9 +9,10 @@ The primary data sources are:
 2. **Data Storage and Handling**
 The system employs a Neo4j graph database to efficiently store and manage user interactions, article metadata, and relationships. 
 + *Nodes*: Users (with properties like username and password). Articles (storing metadata such as title, abstract). 
-+ *Relationships*: SELECTED and RECOMMENDED relationships between user and articles. 
-*NLP tasks*: [spaCy](https://spacy.io/api/doc/) for tasks like tokenization, NER, POS tagging and so on.
-*Embeddings*: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
++ *Relationships*: SELECTED and RECOMMENDED relationships between user and articles.
+3. **Data Processing**
++ *NLP tasks*: [spaCy](https://spacy.io/api/doc/) for tasks like tokenization, NER, POS tagging and so on.
++ *Embeddings*: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
 3. **Interface**
 The front end will be a sleek, intuitive Streamlit application that allows users to:
 + *Register and Log In*: User credentials stored securely in Neo4j.
@@ -22,7 +23,16 @@ The system uses statistical methods to drive recommendations:
 + *Cosine Similarity*: Measure similarity between article abstracts using their BERT contextual embeddings.
 5. **Visualizations**
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
-+ *Neo4j Graph Visualizations*: Showcase relationships between article.
++ *Databse Visualizations*: Overall statistics of the database.
+## **NLP tasks**
+A dedicated tab for various NLP tasks, including:
++ Named Entity Recognition (NER): Identify key entities.
++ Tokenization: Split the text into meaningful units.
++ Lemmatization: Reduce the words to their base form.
++ Part-Of-Speech (POS) Tagging: Understand the gramatical structure of text.
+## **Chatbot Intergration**
++ Gemini-Pro Chatbot for interactive queries.
++  Get insights on articles, NLP concepts, and more.
 ## Tools and Libraries
 | Tasks             |  Tools                 |
 |-------------------|------------------------|
@@ -32,7 +42,7 @@ The system uses statistical methods to drive recommendations:
 | Embeddings        |  Transformer           |
 | Cosine Similarity |  Scikit-learn          |
 | Web Development   |  Streamlit             |
-| Visualization     |  Matplotlib            |
+| Visualization     |  Matplotlib, Plotly    |
 ## Timeline
 ![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.png)
 ## Group Details
