@@ -4,26 +4,26 @@ This project aims to develop a personalized article recommendation system tailor
 ## ⚙️ Functionalities
 1. **Data Source and Retrieval**
 The primary data sources are: 
-+ *Entrez API*: Fetch metadata (PMIDs and PMCIDs) from PubMed and PMC using keyword-based or structured queries. 
-+ *BioC API*: Retrieve full-text articles based on the PMCIDs.  
++ Entrez API: Fetch metadata (PMIDs and PMCIDs) from PubMed and PMC using keyword-based or structured queries. 
++ BioC API: Retrieve full-text articles based on the PMCIDs.  
 2. **Data Storage and Handling**
 The system employs a Neo4j graph database to efficiently store and manage user interactions, article metadata, and relationships. 
-+ *Nodes*: Users (with properties like username and password). Articles (storing metadata such as title, abstract). 
-+ *Relationships*: SELECTED and RECOMMENDED relationships between user and articles.
++ Nodes: Users (with properties like username and password). Articles (storing metadata such as title, abstract). 
++ Relationships: SELECTED and RECOMMENDED relationships between user and articles.
 3. **Data Processing**
-+ *NLP tasks*: [spaCy](https://spacy.io/api/doc/) for NLP related tasks.
-+ *Embeddings*: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
++ NLP tasks: [spaCy](https://spacy.io/api/doc/) for NLP related tasks.
++ Embeddings: Compute contextual embeddings of article abstracts using BERT [transformer](https://huggingface.co/docs/transformers/index) model for similarity calculations. 
 3. **Interface**
 The front end will be a sleek, intuitive Streamlit application that allows users to:
-+ *Register and Log In*: User credentials stored securely in Neo4j.
-+ *Filter and Search*: Keyword-based article search and filtering by publication year.
-+ *Recommendation Dashboard*: Display of recommended articles based on user selection.
++ Register and Log In: User credentials stored securely in Neo4j.
++ Filter and Search: Keyword-based article search and filtering by publication year.
++ Recommendation Dashboard: Display of recommended articles based on user selection.
 4. **Statistical Analysis**
 The system uses statistical methods to drive recommendations: 
-+ *Cosine Similarity*: Measure similarity between article abstracts using their BERT contextual embeddings.
++ Cosine Similarity: Measure similarity between article abstracts using their BERT contextual embeddings.
 5. **Visualizations**
-+ *Article Availability*: Bar charts showing the number of hits based on the user query.
-+ *Databse Visualizations*: Overall statistics of the database.
++ Article Availability: Bar charts showing the number of hits based on the user query.
++ Databse Visualizations: Overall statistics of the database.
 ## 📌 **NLP toolkit**
 A dedicated tab for various NLP tasks, including:
 + Named Entity Recognition (NER): Identify key entities.
