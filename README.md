@@ -1,7 +1,7 @@
 # **Article Recommendation System**
-## Overview:
+## 📖 Overview:
 This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the [Entrez API](https://biopython.org/docs/1.75/api/Bio.Entrez.html) and [BioC API](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PMC/) to retrieve full text article from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly [Streamlit](https://docs.streamlit.io/) interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust [Neo4j](https://neo4j.com/docs/) graph database for efficient authentication and querying.
-## 🔧 Functionalities
+## ⚙️ Functionalities
 1. **Data Source and Retrieval**
 The primary data sources are: 
 + *Entrez API*: Fetch metadata (PMIDs and PMCIDs) from PubMed and PMC using keyword-based or structured queries. 
@@ -33,7 +33,7 @@ A dedicated tab for various NLP tasks, including:
 ## 💬 **Chatbot Intergration**
 + Gemini-Pro Chatbot for interactive queries.
 +  Get insights on articles, NLP concepts, and more.
-## Tools and Libraries
+## 📦 Tools and Libraries
 | Tasks             |  Tools                 |
 |-------------------|------------------------|
 | APIs              |  Entrez API, BioC API  |
@@ -43,9 +43,9 @@ A dedicated tab for various NLP tasks, including:
 | Cosine Similarity |  Scikit-learn          |
 | Web Development   |  Streamlit             |
 | Visualization     |  Matplotlib, Plotly    |
-## Timeline
+## 📅 Timeline
 ![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.png)
-## Group Details
+## 🤝 Group Details
 * Group Name: Core-Code Crew
 * Group Code: G23
 * Tutor Responsible: Frederik, Hennecke
@@ -53,7 +53,7 @@ A dedicated tab for various NLP tasks, including:
 * Group Members: Kolakkattil, Gokul Prakash & Ramesh, Sreelakshmi
 
 Gokul managed the NLP tasks and Neo4j database administration, while Sreelakshmi developed the API functions to gather data based on user queries and took care of the entire documentation. Both shared the responsibility for the Streamlit interface.
-## Acknowledgement
+## 📢 Acknowledgement
 We would like to express our gratitude to the following individuals and organizations for their valuable contributions and support throughout the development of this project:
 + Prof. Bela Gipp & Gipp Lab: We are deeply thankful for the opportunity to participate in the lecture and group project under your guidance and mentorship.
 + Frederik Hennecke: Our tutor, whose insightful feedback and guidance were instrumental in shaping our project and enhancing our understanding.
