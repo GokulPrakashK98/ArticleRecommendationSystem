@@ -44,7 +44,7 @@ A dedicated tab for various NLP tasks, including:
 | Web Development   |  Streamlit             |
 | Visualization     |  Matplotlib, Plotly    |
 ## 📅 Timeline
-![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.png)
+![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.jpg)
 ## 🤝 Group Details
 * Group Name: Core-Code Crew
 * Group Code: G23
