@@ -1,7 +1,7 @@
 # **Article Recommendation System**
 ## Overview:
 This project aims to develop a personalized article recommendation system tailored for biomedical researchers and professionals. The system will leverage the [Entrez API](https://biopython.org/docs/1.75/api/Bio.Entrez.html) and [BioC API](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PMC/) to retrieve full text article from PubMed and PMC, enabling users to discover relevant literature efficiently. Using advanced natural language processing (NLP) techniques and similarity-based matching, the system recommends articles based on content relevance. The user-friendly [Streamlit](https://docs.streamlit.io/) interface allows for dynamic filtering, keyword search, and article exploration, while all user and article metadata are stored in a robust [Neo4j](https://neo4j.com/docs/) graph database for efficient authentication and querying.
-## Functionalities
+## 🔧 Functionalities
 1. **Data Source and Retrieval**
 The primary data sources are: 
 + *Entrez API*: Fetch metadata (PMIDs and PMCIDs) from PubMed and PMC using keyword-based or structured queries. 
@@ -24,13 +24,13 @@ The system uses statistical methods to drive recommendations:
 5. **Visualizations**
 + *Article Availability*: Bar charts showing the number of hits based on the user query.
 + *Databse Visualizations*: Overall statistics of the database.
-## **NLP tasks**
+## 📌 **NLP toolkit**
 A dedicated tab for various NLP tasks, including:
 + Named Entity Recognition (NER): Identify key entities.
 + Tokenization: Split the text into meaningful units.
 + Lemmatization: Reduce the words to their base form.
 + Part-Of-Speech (POS) Tagging: Understand the gramatical structure of text.
-## **Chatbot Intergration**
+## 💬 **Chatbot Intergration**
 + Gemini-Pro Chatbot for interactive queries.
 +  Get insights on articles, NLP concepts, and more.
 ## Tools and Libraries
