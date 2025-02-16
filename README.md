@@ -53,3 +53,10 @@ A dedicated tab for various NLP tasks, including:
 * Group Members: Kolakkattil, Gokul Prakash & Ramesh, Sreelakshmi
 
 Gokul managed the NLP tasks and Neo4j database administration, while Sreelakshmi developed the API functions to gather data based on user queries and took care of the entire documentation. Both shared the responsibility for the Streamlit interface.
+## Acknowledgement
+We would like to express our gratitude to the following individuals and organizations for their valuable contributions and support throughout the development of this project:
++ Prof. Bela Gipp & Gipp Lab: We are deeply thankful for the opportunity to participate in the lecture and group project under your guidance and mentorship.
++ Frederik Hennecke: Our tutor, whose insightful feedback and guidance were instrumental in shaping our project and enhancing our understanding.
++ Terry Lima Ruas: Our lecturer whose expertise and encouragement significantly contributed to the success and growth of our project.
++ Corey Schafer & SpaCy Explosion: A sincere thanks for the insightful tutorials and educational content on YouTube, which greatly enhanced our understanding of key concepts.
+We are grateful for the support and resources provided by these individuals and organizations, which were instrumental in the completion of this project.
