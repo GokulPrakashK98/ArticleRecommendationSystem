@@ -43,6 +43,11 @@ A dedicated tab for various NLP tasks, including:
 | Cosine Similarity |  Scikit-learn          |
 | Web Development   |  Streamlit             |
 | Visualization     |  Matplotlib, Plotly    |
+## Installation and Usage
+'''bash
+pip install -r requirements.txt
+'''
+
 ## 📅 Timeline
 ![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.jpg)
 ## 🤝 Group Details
