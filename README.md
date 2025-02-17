@@ -44,9 +44,10 @@ A dedicated tab for various NLP tasks, including:
 | Web Development   |  Streamlit             |
 | Visualization     |  Matplotlib, Plotly    |
 ## Installation and Usage
-'''bash
+Install required packages:
+```bash
 pip install -r requirements.txt
-'''
+```
 
 ## 📅 Timeline
 ![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.jpg)
