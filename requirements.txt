@@ -1,3 +1,4 @@
+python==3.10
 bcrypt==3.2.0
 biopython==1.84
 neo4j==5.27.0
