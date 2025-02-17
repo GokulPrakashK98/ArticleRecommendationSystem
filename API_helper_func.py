@@ -40,9 +40,9 @@ def fetch_article_id(keyword, mindate, maxdate, db='pmc', retmax=20, retmode='js
 
 
 # Fetch meta data of the collected articles
-def fetch_meta_data(id):
+def fetch_data(id):
     """
-    Fetch metadata of an article using its PMC ID.
+    Fetch data of an full text article using its PMC ID.
     Parameters:
         id (str): The PMC ID of the article.
     Returns:
@@ -151,7 +151,7 @@ def run_script(ids):
     info = {}
     for id in ids:
         try: 
-            data = fetch_meta_data(id)
+            data = fetch_data(id)
             if data:
                 article_data = parse_article_info(data)
                 info.update(article_data)
