@@ -263,7 +263,7 @@ else:
                         st.session_state["look"] = True
                         st.session_state["selected_article"] = selected_article
 
-                        # Add to Neo4j (example code)
+                        # Add to Neo4j
                         user = st.session_state.get("user", "")
                         keyword = st.session_state.get("keyword", "")
                         add_selected(neo4j_conn, selected_article, user, keyword)
