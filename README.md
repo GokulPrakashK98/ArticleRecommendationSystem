@@ -48,7 +48,10 @@ Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
-
+To run the streamlit app:
+```python
+streamlit run Streamlit_RecomApp.py
+```
 ## 📅 Timeline
 ![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.jpg)
 ## 🤝 Group Details
