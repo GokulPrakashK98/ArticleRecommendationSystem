@@ -54,6 +54,8 @@ streamlit run Streamlit_RecomApp.py
 ```
 ## 📅 Timeline
 ![](https://github.com/GokulPrakashK98/DataScienceProject/blob/main/Timeline.jpg)
+## Future Improvements
+The article recommendation system works by considering the number of articles the user selects during their initial search. This approach helps reduce delays caused by API response times when fetching a large number of articles. A potential improvement is to introduce a second API call specifically for generating recommendations. Another alternative is to download the full dataset from PubMed's FTP service and store it in a vector database like Milvus for faster and more efficient searches, eliminating the need for frequent API requests.
 ## 🤝 Group Details
 * Group Name: Core-Code Crew
 * Group Code: G23
